@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Калькулятор выгодного объёма</title>
+  <meta name="description" content="Сравните цену разных объёмов и узнайте, какой вариант выгоднее.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">Быстрое сравнение цены</span>
+        <h1>Калькулятор выгодного объёма</h1>
+        <p>Введите объём и цену нескольких вариантов. Калькулятор покажет цену за единицу и реальную экономию.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="toolbar">
+        <label>
+          Что сравниваем
+          <select id="mode">
+            <option value="volume">Объём</option>
+            <option value="weight">Вес</option>
+          </select>
+        </label>
+
+        <label>
+          Название
+          <input id="title" type="text" placeholder="Например, Ballantine's">
+        </label>
+      </div>
+
+      <div id="rows" class="rows"></div>
+
+      <div class="actions">
+        <button id="addRow" class="secondary" type="button">+ Добавить вариант</button>
+        <button id="saveHistory" class="ghost" type="button">Сохранить в историю</button>
+      </div>
+    </section>
+
+    <section id="result" class="result card hidden"></section>
+
+    <section class="card history-card">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Локально в браузере</span>
+          <h2>История</h2>
+        </div>
+        <button id="clearHistory" class="ghost danger" type="button">Очистить</button>
+      </div>
+      <div id="history" class="history"></div>
+    </section>
+  </main>
+
+  <template id="rowTemplate">
+    <div class="calc-row">
+      <div class="field">
+        <label>Количество</label>
+        <input class="amount" type="number" inputmode="decimal" min="0" step="any" placeholder="0.5">
+      </div>
+      <div class="field">
+        <label>Единица</label>
+        <select class="unit"></select>
+      </div>
+      <div class="field price-field">
+        <label>Цена, ₽</label>
+        <input class="price" type="number" inputmode="decimal" min="0" step="any" placeholder="1000">
+      </div>
+      <button class="remove" type="button" aria-label="Удалить вариант">×</button>
+    </div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

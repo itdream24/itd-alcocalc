@@ -1,0 +1,321 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #171717;
+  background: #f5f5f7;
+  font-synthesis: none;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: min(920px, calc(100% - 28px));
+  margin: 0 auto;
+  padding: 42px 0 70px;
+}
+
+.hero {
+  margin-bottom: 22px;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: clamp(32px, 6vw, 54px);
+  line-height: 1.03;
+  letter-spacing: -.04em;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: 24px;
+}
+
+.hero p {
+  max-width: 720px;
+  margin-bottom: 0;
+  color: #5f6368;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e7e7e9;
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .045);
+}
+
+.toolbar {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  color: #52525b;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+input,
+select {
+  width: 100%;
+  margin-top: 7px;
+  border: 1px solid #d9d9de;
+  border-radius: 12px;
+  background: #fff;
+  padding: 12px 13px;
+  color: #111;
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #111;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, .07);
+}
+
+.rows {
+  display: grid;
+  gap: 10px;
+}
+
+.calc-row {
+  display: grid;
+  grid-template-columns: 1.1fr .85fr 1.1fr 42px;
+  gap: 10px;
+  align-items: end;
+  padding: 14px;
+  background: #f8f8fa;
+  border-radius: 16px;
+}
+
+.remove {
+  height: 44px;
+  border: 0;
+  border-radius: 12px;
+  background: #ececef;
+  color: #555;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.remove:hover {
+  background: #e2e2e6;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+button.secondary,
+button.ghost {
+  border: 0;
+  border-radius: 12px;
+  padding: 11px 14px;
+  font-weight: 700;
+}
+
+button.secondary {
+  background: #111;
+  color: #fff;
+}
+
+button.ghost {
+  background: #efeff2;
+  color: #222;
+}
+
+button.danger {
+  color: #a11;
+}
+
+.result {
+  margin-top: 18px;
+}
+
+.hidden {
+  display: none;
+}
+
+.winner {
+  padding: 18px;
+  border-radius: 18px;
+  background: #111;
+  color: #fff;
+}
+
+.winner .small {
+  color: rgba(255, 255, 255, .65);
+}
+
+.winner h2 {
+  margin: 5px 0 8px;
+  font-size: clamp(28px, 5vw, 42px);
+  letter-spacing: -.03em;
+}
+
+.winner-price {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.comparison-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.comparison {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  padding: 15px 16px;
+  border: 1px solid #e8e8eb;
+  border-radius: 15px;
+}
+
+.comparison strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.comparison .meta {
+  color: #71717a;
+  font-size: 14px;
+}
+
+.comparison .delta {
+  align-self: center;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.history-card {
+  margin-top: 18px;
+}
+
+.history {
+  display: grid;
+  gap: 10px;
+}
+
+.history-empty {
+  margin: 0;
+  padding: 18px;
+  border: 1px dashed #d8d8dd;
+  border-radius: 15px;
+  color: #777;
+}
+
+.history-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  padding: 15px 16px;
+  border: 1px solid #e8e8eb;
+  border-radius: 15px;
+}
+
+.history-item button {
+  border: 0;
+  background: transparent;
+  color: #777;
+}
+
+.history-title {
+  margin-bottom: 4px;
+  font-weight: 800;
+}
+
+.history-meta {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.small {
+  font-size: 13px;
+}
+
+@media (max-width: 680px) {
+  .container {
+    width: min(100% - 18px, 920px);
+    padding-top: 24px;
+  }
+
+  .card {
+    padding: 15px;
+    border-radius: 18px;
+  }
+
+  .toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .calc-row {
+    grid-template-columns: 1fr 105px;
+  }
+
+  .price-field {
+    grid-column: 1 / 2;
+  }
+
+  .remove {
+    grid-column: 2 / 3;
+  }
+
+  .comparison {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison .delta {
+    white-space: normal;
+  }
+}
